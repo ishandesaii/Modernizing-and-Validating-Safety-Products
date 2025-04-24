@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Service - Smart Surveillance Detection System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h4 class="text-primary m-0"><i class="fa fa-eye me-2" style="font-size:25px"></i>Smart Surveillance Detection System</h4>
+                    <!-- <img src="../static/img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="" class="nav-item nav-link active"> User Trespassing Detection </a>
+                        <a href="{{url_for('index')}}" class="nav-item nav-link"> Back Home </a>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-3">
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+
+
+         <!-- Contact Start -->
+         <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal"> USER TRESPASSING DETECTION SYSTEM  </h5>
+                    <h2 class="mb-3">DETECTING THE USER TRESPASSING USING FACE RECOGNITION</h2><br>
+                </div>
+                <div class="row g-4 text-center">
+                    <div class="col-12">
+                       
+                        <section class="ftco-section">
+                            <div class="container">
+                                <form action="{{ url_for('trespassdetection') }}" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <center>
+                                        <div class="col-md-4 mb-3">
+                                          <div class="form-group">
+                                            <h4><label class="label" for="reviewerid" style="color:#0f172b;">Detect Trespassing by Clicking Submit Button & Press Q to Close the Camera</label></h4>
+                                          </div>
+                                        </div><br>
+                                        <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            <input type="submit" value="Submit" class="btn btn-primary">
+                                        </div>
+                                        </div>
+                                        </center>
+                                    </div>
+                                </form><br>
+                              <!-- {% if outputvalues != "nonoutput": %}
+                                <center>
+                                    <div id ="result">
+                                        <br>
+                                        <video width="600" height="350" controls>
+                                            <source src="./static/img/output_video/output_video.mp4" type="video/mp4">
+                                            <mimeMap fileExtension=".webm" mimeType="video/webm" />
+                                            <source src="./static/img/output_video/output_video.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </center>
+                              {% endif %} -->
+                            </div>
+                        </section><br><br>
+                        <style>
+                        .table-wrap {
+                        overflow-x: scroll;
+                        overflow-y: scroll;  }
+                        
+                        .table {
+                        min-width: 1000px !important;
+                        max-height: 700px !important;
+                        width: 100%;
+                        background: #fff;
+                        -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+                        -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+                        box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29); }
+                        .table thead.thead-primary {
+                            background: #59d8ee; }
+                        .table thead th {
+                            border: none;
+                            padding: 18px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: white; }
+                        .table tbody tr {
+                            margin-bottom: 10px; }
+                        .table tbody th, .table tbody td {
+                            border: none;
+                            padding: 18px;
+                            font-size: 15px;
+                            background: #fff;
+                            border-bottom: 4px solid #f8f9fd;
+                            vertical-align: middle; }
+                        .table tbody td.quantity {
+                            width: 10%; }
+                        .table tbody td .img {
+                            width: 100px;
+                            height: 80px; }
+                        .table tbody td .email span {
+                            display: block; }
+                            .table tbody td .email span:last-child {
+                            font-size: 12px;
+                            color: rgba(0, 0, 0, 0.3); }
+                        .table tbody td .close span {
+                            font-size: 12px;
+                            color: #dc3545; }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/wow/wow.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/lib/counterup/counterup.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../static/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>
